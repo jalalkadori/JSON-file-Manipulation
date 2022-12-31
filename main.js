@@ -18,6 +18,13 @@ xhr.send();
 function displayData(data) {
   // Code to display the data goes here
   var table = document.getElementById('table');
+  var actorsInfo;
+
+  for (let i = 0; i < data[i].actors.length; i++) {
+    
+  }
+  
+
   var tableData = '';
   for(let i=0; i < data.length; i++) {
     tableData+= 
@@ -39,7 +46,7 @@ function displayData(data) {
       </tr>`
   }
   table.innerHTML = tableData;
-  
+    
 }
 
 
