@@ -52,46 +52,19 @@
           ],
           "actors": [
             {
-              "name": "Leonardo",
-              "surname": "DiCaprio",
+              "name": "Dicaprio",
+              "firstname": "Leonardo",
               "nationality": "American"
             },
             {
               "name": "Joseph",
-              "surname": "Gordon-Levitt",
+              "firstname": "Gordon-Levitt",
               "nationality": "American"
             },
             {
               "name": "Ellen",
-              "surname": "Page",
+              "firstname": "Page",
               "nationality": "Canadian"
-            }
-          ]
-        },
-        {
-          "title": "The Shawshank Redemption",
-          "director": "Frank Darabont",
-          "duration": 142,
-          "year": 1994,
-          "poster": "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          "festivals": [
-            "Toronto International Film Festival"
-          ],
-          "actors": [
-            {
-              "name": "Tim",
-              "surname": "Robbins",
-              "nationality": "American"
-            },
-            {
-              "name": "Morgan",
-              "surname": "Freeman",
-              "nationality": "American"
-            },
-            {
-              "name": "Bob",
-              "surname": "Gunton",
-              "nationality": "American"
             }
           ]
         }
