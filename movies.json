@@ -9,12 +9,12 @@
         "festivals": ["Cannes Film Festival", "Toronto International Film Festival"],
         "actors": [
           {
-            "name": "Tim Robbins",
+            "name": "Robbins",
             "firstname": "Tim",
             "nationality": "American"
           },
           {
-            "name": "Morgan Freeman",
+            "name": "Freeman",
             "firstname": "Morgan",
             "nationality": "American"
           }
@@ -29,45 +29,45 @@
         "festivals": ["Venice Film Festival", "Academy Awards"],
         "actors": [
           {
-            "name": "Marlon Brando",
+            "name": "Brando",
             "firstname": "Marlon",
             "nationality": "American"
           },
           {
-            "name": "Al Pacino",
+            "name": "Pacino",
             "firstname": "Al",
             "nationality": "American"
           }
         ]
       },
-        {
-          "title": "Inception",
-          "director": "Christopher Nolan",
-          "duration": 148,
-          "year": 2010,
-          "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-          "festivals": [
-            "Cannes Film Festival",
-            "Toronto International Film Festival"
-          ],
-          "actors": [
-            {
-              "name": "Dicaprio",
-              "firstname": "Leonardo",
-              "nationality": "American"
-            },
-            {
-              "name": "Joseph",
-              "firstname": "Gordon-Levitt",
-              "nationality": "American"
-            },
-            {
-              "name": "Ellen",
-              "firstname": "Page",
-              "nationality": "Canadian"
-            }
-          ]
-        }
+      {
+        "title": "Inception",
+        "director": "Christopher Nolan",
+        "duration": 148,
+        "year": 2010,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+        "festivals": [
+          "Cannes Film Festival",
+          "Toronto International Film Festival"
+        ],
+        "actors": [
+          {
+            "name": "Dicaprio",
+            "firstname": "Leonardo",
+            "nationality": "American"
+          },
+          {
+            "name": "Joseph",
+            "firstname": "Gordon-Levitt",
+            "nationality": "American"
+          },
+          {
+            "name": "Ellen",
+            "firstname": "Page",
+            "nationality": "Canadian"
+          }
+        ]
+      }
     ]
   }
   

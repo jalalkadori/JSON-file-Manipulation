@@ -1,13 +1,14 @@
 var xhr = new XMLHttpRequest();
 
+
 xhr.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     // Parse the JSON file
     var json = JSON.parse(this.responseText);
     var moviesList = json.movies;
-    // Do something with the JSON data
+    // printing the array to the console for testing
     console.log(moviesList);
-    // For example, you could display the data in a table or list
+    // calling the display function with the array moviesList as a paramettre
     displayData(moviesList);
   }
 };
@@ -16,37 +17,69 @@ xhr.open("GET", "movies.json", true);
 xhr.send();
 
 function displayData(data) {
-  // Code to display the data goes here
+  //display the data in the table html
   var table = document.getElementById('table');
-  var actorsInfo;
-
-  for (let i = 0; i < data[i].actors.length; i++) {
-    
-  }
-  
+  var actorsList = '';
+  var festivalsList = '';
 
   var tableData = '';
   for(let i=0; i < data.length; i++) {
+    let actorsList = '';
+    for(let k = 0; k < data[i].actors.length; k++) {
+      actorsList+= 
+      `<ul class="list-group mt-1">
+        <li class="list-group-item">Name : ${data[i].actors[k].name}</li>
+        <li class="list-group-item">First Name : ${data[i].actors[k].firstname}</li>
+        <li class="list-group-item">Nationality: ${data[i].actors[k].nationality}</li>
+      </ul>`
+    }
+    let festivalsList = '';
+    for(let j = 0; j < data[i].festivals.length; j++) {
+      festivalsList+= 
+      `<ul class="list-group">
+        <li class="list-group-item">${data[i].festivals[j]}</li>
+      </ul>`
+    }
     tableData+= 
       `<tr>
         <td scope="col">${i+1}</td>
         <td scope="col">${data[i].title}</td>
         <td scope="col">${data[i].director}</td>
-        <td scope="col">${data[i].duration}</td>
+        <td scope="col">${data[i].duration} Min</td>
         <td scope="col">${data[i].year}</td>
         <td scope="col"><img src="${data[i].poster}" width="100px"></td>
-        <td scope="col">${data[i].festivals}</td>
-        <td scope="col">
-          <ul class="list-group">
-            <li class="list-group-item">Name : ${data[i].actors[0].name}</li>
-            <li class="list-group-item">First Name : ${data[i].actors[0].firstname}</li>
-            <li class="list-group-item">Nationality: ${data[i].actors[0].nationality}</li>
-          </ul>
-        </td>
+        <td scope="col">${festivalsList}</td>
+        <td scope="col">${actorsList}</td>
       </tr>`
   }
   table.innerHTML = tableData;
-    
 }
+
+function search() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("searchInput");
+  // Forma user input to upper case 
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      //formating table cell text to uppercase to match the user input
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        // if the index of the filter var is greater than -1, tables cells that matches the search will be displyed 
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
 
 
