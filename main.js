@@ -17,9 +17,6 @@ xhr.send();
 function displayData(data) {
   //display the data in the table html
   var table = document.getElementById('table');
-  var actorsList = '';
-  var festivalsList = '';
-
   var tableData = '';
   for(let i=0; i < data.length; i++) {
     let actorsList = '';
@@ -75,7 +72,6 @@ function search() {
 
       } else {
         tr[i].style.display = "none";
-        error.innerHTML = 'No films matches your input'
       }
     }
   }
