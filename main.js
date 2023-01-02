@@ -1,6 +1,4 @@
 var xhr = new XMLHttpRequest();
-
-
 xhr.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     // Parse the JSON file
@@ -27,7 +25,7 @@ function displayData(data) {
     let actorsList = '';
     for(let k = 0; k < data[i].actors.length; k++) {
       actorsList+= 
-      `<ul class="list-group mt-1">
+      `<ul class="list-group mt-1 list-group-flush">
         <li class="list-group-item">Name : ${data[i].actors[k].name}</li>
         <li class="list-group-item">First Name : ${data[i].actors[k].firstname}</li>
         <li class="list-group-item">Nationality: ${data[i].actors[k].nationality}</li>
@@ -36,7 +34,7 @@ function displayData(data) {
     let festivalsList = '';
     for(let j = 0; j < data[i].festivals.length; j++) {
       festivalsList+= 
-      `<ul class="list-group">
+      `<ul class="list-group list-group-flush">
         <li class="list-group-item">${data[i].festivals[j]}</li>
       </ul>`
     }
@@ -57,15 +55,16 @@ function displayData(data) {
 
 function search() {
   // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tr, td, txtValue;
   input = document.getElementById("searchInput");
+  let error = document.getElementById("error");
   // Forma user input to upper case 
   filter = input.value.toUpperCase();
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
+  for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       txtValue = td.textContent || td.innerText;
@@ -73,8 +72,10 @@ function search() {
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         // if the index of the filter var is greater than -1, tables cells that matches the search will be displyed 
         tr[i].style.display = "";
+
       } else {
         tr[i].style.display = "none";
+        error.innerHTML = 'No films matches your input'
       }
     }
   }
