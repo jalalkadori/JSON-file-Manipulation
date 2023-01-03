@@ -20,7 +20,7 @@ function displayData(data) {
   var tableData = '';
   for(let i=0; i < data.length; i++) {
     let actorsList = '';
-    for(let k = 0; k < data[i].actors.length; k++) {
+    for(let k = 0; k< data[i].actors.length; k++) {
       actorsList+= 
       `<ul class="list-group mt-1 list-group-flush">
         <li class="list-group-item">Name : ${data[i].actors[k].name}</li>
@@ -52,26 +52,26 @@ function displayData(data) {
 
 function search() {
   // Declare variables
-  var input, filter, table, tr, td, txtValue;
-  input = document.getElementById("searchInput");
-  let error = document.getElementById("error");
+  var td;
+  var cellTxtValue;
+  var input = document.getElementById("searchInput");
   // Forma user input to upper case 
-  filter = input.value.toUpperCase();
-  table = document.getElementById("table");
-  tr = table.getElementsByTagName("tr");
+  var filter = input.value.toUpperCase();
+  var table = document.getElementById("table");
+  var tr = table.getElementsByTagName("tr");
+  
   // Loop through all table rows, and hide those who don't match the search query
   for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
-      txtValue = td.textContent || td.innerText;
+      cellTxtValue = td.textContent || td.innerText;
       //formating table cell text to uppercase to match the user input
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        // if the index of the filter var is greater than -1, tables cells that matches the search will be displyed 
+      if (cellTxtValue.toUpperCase().indexOf(filter) > -1) {
+        // if the index of the filter var is greater than -1, table cells that matches the search will be displyed 
         tr[i].style.display = "";
-
       } else {
+        // table cells that matches the search will be displyed 
         tr[i].style.display = "none";
-        error.innerHTML = 'No films matches your input'
       }
     }
   }
