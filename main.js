@@ -1,4 +1,5 @@
 var xhr = new XMLHttpRequest();
+var moviesList;
 xhr.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     // Parse the JSON file
@@ -10,6 +11,8 @@ xhr.onreadystatechange = function() {
     displayData(moviesList);
   }
 };
+
+
 
 xhr.open("GET", "movies.json", true);
 xhr.send();
@@ -52,14 +55,14 @@ function displayData(data) {
 
 function search() {
   // Declare variables
-  var td;
-  var cellTxtValue;
   var input = document.getElementById("searchInput");
   var error = document.getElementById("error");
-  // Forma user input to upper case 
+  // Format user input to upper case 
   var filter = input.value.toUpperCase();
   var table = document.getElementById("table");
   var tr = table.getElementsByTagName("tr");
+  var td;
+  var cellTxtValue;
   // Loop through all table rows, and hide those who don't match the search query
   for (let i = 0; i < tr.length; i++) {
     error.innerHTML = '';
@@ -79,5 +82,4 @@ function search() {
     }
   }
 }
-
 
