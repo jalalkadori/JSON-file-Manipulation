@@ -42,10 +42,10 @@ function displayData(data) {
       `<tr>
         <td scope="col">${i+1}</td>
         <td scope="col">${data[i].title}</td>
+        <td scope="col"><img src="${data[i].poster}" width="100px"></td>
         <td scope="col">${data[i].director}</td>
         <td scope="col">${data[i].duration} Min</td>
         <td scope="col">${data[i].year}</td>
-        <td scope="col"><img src="${data[i].poster}" width="100px"></td>
         <td scope="col">${festivalsList}</td>
         <td scope="col">${actorsList}</td>
       </tr>`
@@ -62,7 +62,6 @@ function search() {
   filter = input.value.toUpperCase();
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
-
   // Loop through all table rows, and hide those who don't match the search query
   for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
@@ -75,7 +74,7 @@ function search() {
 
       } else {
         tr[i].style.display = "none";
-        error.innerHTML = 'No films matches your input'
+        error.innerHTML = 'No results matches your input!'
       }
     }
   }
