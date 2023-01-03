@@ -55,13 +55,14 @@ function search() {
   var td;
   var cellTxtValue;
   var input = document.getElementById("searchInput");
+  var error = document.getElementById("error");
   // Forma user input to upper case 
   var filter = input.value.toUpperCase();
   var table = document.getElementById("table");
   var tr = table.getElementsByTagName("tr");
-  
   // Loop through all table rows, and hide those who don't match the search query
   for (let i = 0; i < tr.length; i++) {
+    error.innerHTML = '';
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       cellTxtValue = td.innerText;
@@ -69,14 +70,14 @@ function search() {
       if (cellTxtValue.toUpperCase().indexOf(filter) > -1) {
         // if the index of the filter var is greater than -1, table cells that matches the search will be displyed 
         tr[i].style.display = "";
+        
       } else {
         // table cells that matches the search will be displyed 
         tr[i].style.display = "none";
+        error.innerHTML = `NO films matches your search : ${input.value}`;
       }
     }
   }
 }
-
-
 
 
