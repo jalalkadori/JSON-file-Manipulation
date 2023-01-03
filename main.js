@@ -64,7 +64,7 @@ function search() {
   for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
     if (td) {
-      cellTxtValue = td.textContent || td.innerText;
+      cellTxtValue = td.innerText;
       //formating table cell text to uppercase to match the user input
       if (cellTxtValue.toUpperCase().indexOf(filter) > -1) {
         // if the index of the filter var is greater than -1, table cells that matches the search will be displyed 
